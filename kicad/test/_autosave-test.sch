@@ -1,0 +1,267 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Microchip_ATmega:ATmega2560-16AU U?
+U 1 1 5EB03CEF
+P 4200 3850
+F 0 "U?" H 4200 861 50  0000 C CNN
+F 1 "ATmega2560-16AU" H 4200 770 50  0000 C CNN
+F 2 "Package_QFP:TQFP-100_14x14mm_P0.5mm" H 4200 3850 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2549-8-bit-AVR-Microcontroller-ATmega640-1280-1281-2560-2561_datasheet.pdf" H 4200 3850 50  0001 C CNN
+	1    4200 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_POT RV?
+U 1 1 5EB0B80E
+P 7500 1550
+F 0 "RV?" H 7431 1596 50  0000 R CNN
+F 1 "R_POT" H 7431 1505 50  0000 R CNN
+F 2 "" H 7500 1550 50  0001 C CNN
+F 3 "~" H 7500 1550 50  0001 C CNN
+	1    7500 1550
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5EB128B0
+P 7000 1700
+F 0 "C?" V 6748 1700 50  0000 C CNN
+F 1 "C" V 6839 1700 50  0000 C CNN
+F 2 "" H 7038 1550 50  0001 C CNN
+F 3 "~" H 7000 1700 50  0001 C CNN
+	1    7000 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7350 1550 7000 1550
+NoConn ~ 7000 1600
+Wire Wire Line
+	7500 1850 7500 1700
+$Comp
+L power:GND #PWR?
+U 1 1 5EB393C3
+P 9050 4400
+F 0 "#PWR?" H 9050 4150 50  0001 C CNN
+F 1 "GND" H 9055 4227 50  0000 C CNN
+F 2 "" H 9050 4400 50  0001 C CNN
+F 3 "" H 9050 4400 50  0001 C CNN
+	1    9050 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7000 1550 5000 1550
+Connection ~ 7000 1550
+$Comp
+L power:+5V #PWR?
+U 1 1 5EB462C7
+P 8650 1300
+F 0 "#PWR?" H 8650 1150 50  0001 C CNN
+F 1 "+5V" H 8665 1473 50  0000 C CNN
+F 2 "" H 8650 1300 50  0001 C CNN
+F 3 "" H 8650 1300 50  0001 C CNN
+	1    8650 1300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7500 1300 7500 1400
+$Comp
+L Device:R R?
+U 1 1 5EB52762
+P 6250 2600
+F 0 "R?" H 6320 2646 50  0000 L CNN
+F 1 "R" H 6320 2555 50  0000 L CNN
+F 2 "" V 6180 2600 50  0001 C CNN
+F 3 "~" H 6250 2600 50  0001 C CNN
+	1    6250 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5EB54B4F
+P 6300 2900
+F 0 "R?" H 6370 2946 50  0000 L CNN
+F 1 "R" H 6370 2855 50  0000 L CNN
+F 2 "" V 6230 2900 50  0001 C CNN
+F 3 "~" H 6300 2900 50  0001 C CNN
+	1    6300 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5EB5C1C2
+P 6100 2600
+F 0 "C?" V 5848 2600 50  0000 C CNN
+F 1 "C" V 5939 2600 50  0000 C CNN
+F 2 "" H 6138 2450 50  0001 C CNN
+F 3 "~" H 6100 2600 50  0001 C CNN
+	1    6100 2600
+	1    0    0    -1  
+$EndComp
+NoConn ~ 6100 2500
+$Comp
+L Device:C C?
+U 1 1 5EB5C5CF
+P 6150 2900
+F 0 "C?" V 5898 2900 50  0000 C CNN
+F 1 "C" V 5989 2900 50  0000 C CNN
+F 2 "" H 6188 2750 50  0001 C CNN
+F 3 "~" H 6150 2900 50  0001 C CNN
+	1    6150 2900
+	1    0    0    -1  
+$EndComp
+NoConn ~ 6150 2800
+Wire Wire Line
+	6100 2750 6150 2750
+Connection ~ 6150 2750
+Wire Wire Line
+	6150 2750 6250 2750
+Connection ~ 6250 2750
+Wire Wire Line
+	6250 2750 6300 2750
+Connection ~ 6300 3050
+Wire Wire Line
+	6300 3050 6150 3050
+Wire Wire Line
+	6100 2450 6250 2450
+Connection ~ 6250 2450
+Wire Wire Line
+	6250 2450 6750 2450
+NoConn ~ 9000 4350
+Wire Wire Line
+	9050 1300 9050 1850
+Wire Wire Line
+	8650 1300 8650 2250
+Wire Wire Line
+	7500 1300 8650 1300
+Connection ~ 8650 1300
+Wire Wire Line
+	7500 1850 9050 1850
+Connection ~ 7500 1850
+Connection ~ 9050 1850
+$Comp
+L Device:R R?
+U 1 1 5EB83648
+P 8200 2900
+F 0 "R?" H 8270 2946 50  0000 L CNN
+F 1 "R" H 8270 2855 50  0000 L CNN
+F 2 "" V 8130 2900 50  0001 C CNN
+F 3 "~" H 8200 2900 50  0001 C CNN
+	1    8200 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5EB8364E
+P 8050 2900
+F 0 "C?" V 7798 2900 50  0000 C CNN
+F 1 "C" V 7889 2900 50  0000 C CNN
+F 2 "" H 8088 2750 50  0001 C CNN
+F 3 "~" H 8050 2900 50  0001 C CNN
+	1    8050 2900
+	1    0    0    -1  
+$EndComp
+NoConn ~ 8050 2800
+Wire Wire Line
+	7000 1850 7500 1850
+$Comp
+L Device:Rotary_Encoder_Switch SW?
+U 1 1 5EB50869
+P 7500 2750
+F 0 "SW?" H 7500 3117 50  0000 C CNN
+F 1 "Rotary_Encoder_Switch" H 7500 3026 50  0000 C CNN
+F 2 "" H 7350 2910 50  0001 C CNN
+F 3 "~" H 7500 3010 50  0001 C CNN
+	1    7500 2750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9050 1850 9050 2350
+Wire Wire Line
+	6300 2750 7050 2750
+Wire Wire Line
+	7050 2750 7050 2250
+Wire Wire Line
+	7050 2250 8650 2250
+Connection ~ 6300 2750
+Connection ~ 8650 2250
+Wire Wire Line
+	8650 2250 8650 3550
+Wire Wire Line
+	7500 2450 7500 2350
+Wire Wire Line
+	7500 2350 9050 2350
+Connection ~ 9050 2350
+Wire Wire Line
+	9050 2350 9050 3250
+Wire Wire Line
+	6750 2450 6750 2300
+Wire Wire Line
+	6750 2300 7600 2300
+Wire Wire Line
+	7600 2300 7600 2450
+Wire Wire Line
+	7100 3050 7100 2450
+Wire Wire Line
+	7100 2450 7400 2450
+Wire Wire Line
+	6300 3050 7100 3050
+Wire Wire Line
+	7600 3050 7600 3250
+Wire Wire Line
+	7600 3250 9050 3250
+Connection ~ 9050 3250
+Wire Wire Line
+	9050 3250 9050 4400
+$Comp
+L Device:R R?
+U 1 1 5EB9F95E
+P 7100 3400
+F 0 "R?" H 7170 3446 50  0000 L CNN
+F 1 "R" H 7170 3355 50  0000 L CNN
+F 2 "" V 7030 3400 50  0001 C CNN
+F 3 "~" H 7100 3400 50  0001 C CNN
+	1    7100 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5EB9F964
+P 6950 3400
+F 0 "C?" V 6698 3400 50  0000 C CNN
+F 1 "C" V 6789 3400 50  0000 C CNN
+F 2 "" H 6988 3250 50  0001 C CNN
+F 3 "~" H 6950 3400 50  0001 C CNN
+	1    6950 3400
+	1    0    0    -1  
+$EndComp
+NoConn ~ 6950 3300
+Wire Wire Line
+	7400 3050 7400 3250
+Wire Wire Line
+	7400 3250 7100 3250
+Connection ~ 7100 3250
+Wire Wire Line
+	7100 3250 6950 3250
+Wire Wire Line
+	6950 3550 7100 3550
+Connection ~ 8650 3550
+Wire Wire Line
+	8650 3550 8650 4400
+Connection ~ 7100 3550
+Wire Wire Line
+	7100 3550 8650 3550
+$EndSCHEMATC

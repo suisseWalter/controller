@@ -1,0 +1,6 @@
+in button.ino:
+ln 180 */
+ln 161 }/*
+ln 154 while(time2+20>millis())delay(1);
+ln 150 currentbit=currentbit<<1;
+ln 145 newstate+=currentbit;
