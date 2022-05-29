@@ -1,0 +1,1 @@
+.\python\python\python.exe .\python\joystick.py

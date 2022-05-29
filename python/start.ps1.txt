@@ -1,0 +1,1 @@
+& c:/Users/walter/AppData/Local/Programs/Python/Python310/python.exe c:/Users/walter/Documents/GitHub/controller/python/python.py
