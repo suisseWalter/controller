@@ -2,8 +2,18 @@ from time import sleep
 import pyvjoy
 import serial as serial
 import serial.tools.list_ports
-
-
+# calibration values for all the joysticks,
+# if thrust never goes to 0 increase first value
+# if thrust reaches 0 to soon decrease first value
+# if thrust never reaches 100% decrease second value
+# if thrust reaches 100% to soon increase second value
+# All values need to be between 0 and 1024.
+# Only change the values in small increments(5).
+calibration_values = [
+    [80, 890], 
+    [80, 880], 
+    [80, 890]
+    ]
 def readline(ser:serial.Serial)->tuple[str,serial.Serial]:
     try:
         line=ser.readline().decode()
@@ -33,6 +43,15 @@ def readline(ser:serial.Serial)->tuple[str,serial.Serial]:
     else:
         return line ,ser 
 
+def scale_and_calibrate(axisid:int,value:int)->int :
+    value=value - calibration_values[2-axisid][0]
+    value=value*(32*1024/calibration_values[2-axisid][1])
+    if value<0:
+        value=0
+    if value>32*1024:
+        value=32*1024
+    return int(value)
+    
 
 
 
@@ -65,8 +84,8 @@ while(True):
     elif(-1<0):
         axisid=-int( sline[0])
         axisvalue=int(sline[1])
-        print("set axis (",axisid,",",axis[axisid-1],") to: ", axisvalue)
-        setattr(joy.data,axis[axisid-1],32*axisvalue)
+        print("set axis (",axisid,",",axis[axisid-1],") to: ", scale_and_calibrate(axisid-1,axisvalue))
+        setattr(joy.data,axis[axisid-1],scale_and_calibrate(axisid-1,axisvalue))
         joy.update()
     #print(sline)
 
