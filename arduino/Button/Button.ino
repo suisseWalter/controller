@@ -8,7 +8,7 @@ uint8_t buttonPins[] = {2, 3, 4, 5, 6, 7};
 uint8_t analogpin[] = {A0,A1,A2};
 uint32_t buttonState = 0;
 uint32_t newstate=0;
-const int lowercut=80,highercut=900;
+const int lowercut=0,highercut=1023;
 uint32_t time = 0, k = 0, time2=0,time3=0;
 bool resend = false, resend2 = false;
 //LiquidCrystal_I2C lcd(0x27, 16, 4);
@@ -186,7 +186,7 @@ void loop() {
   //Serial.println(newanalogState[0]);
 
   for (int i = 0; i < sizeof(analogpin); i++) {
-    if ((time3+2<millis())&&((!compare(newanalogState[i], analogState[i], 10))||((newanalogState[i]==0||newanalogState[i]==1024)&&newanalogState[i]!=analogState[i]))) {
+    if ((time3+2<millis())&&((!compare(newanalogState[i], analogState[i], 3))||((newanalogState[i]==0||newanalogState[i]==1024)&&newanalogState[i]!=analogState[i]))) {
       Serial.print("-");
       Serial.print(i + 1);
       Serial.print("<");
